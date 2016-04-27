@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<head>
+    <script type="text/javascript">
+
+// JK Pop up image viewer script- By JavaScriptKit.com
+// Visit JavaScript Kit (http://javascriptkit.com)
+// for free JavaScript tutorials and scripts
+// This notice must stay intact for use
+
+var popbackground="green" //specify backcolor or background image for pop window
+var windowtitle="Image Window"  //pop window title
+
+function detectexist(obj){
+return (typeof obj !="undefined")
+}
+
+function jkpopimage(imgpath, popwidth, popheight, textdescription){
+
+function getpos(){
+
+leftpos=(detectexist(window.screenLeft))? screenLeft+document.body.clientWidth/2-popwidth/2 : detectexist(window.screenX)? screenX+innerWidth/2-popwidth/2 : 0
+toppos=(detectexist(window.screenTop))? screenTop+document.body.clientHeight/2-popheight/2 : detectexist(window.screenY)? screenY+innerHeight/2-popheight/2 : 0
+if (window.opera){
+leftpos-=screenLeft
+toppos-=screenTop
+}
+
+}
+
+getpos()
+var winattributes='width='+popwidth+',height='+popheight+',resizable=yes,left='+leftpos+',top='+toppos
+var bodyattribute=(popbackground.indexOf(".")!=-1)? 'background="'+popbackground+'"' : 'bgcolor="'+popbackground+'"'
+if (typeof jkpopwin=="undefined" || jkpopwin.closed)
+jkpopwin=window.open("","",winattributes)
+else{
+//getpos() //uncomment these 2 lines if you wish subsequent popups to be centered too
+//jkpopwin.moveTo(leftpos, toppos)
+jkpopwin.resizeTo(popwidth, popheight+30)
+}
+jkpopwin.document.open()
+jkpopwin.document.write('<html><title>'+windowtitle+'</title><body '+bodyattribute+'><img src="'+imgpath+'" style="margin-bottom: 0.5em;height:325px; width:325px;"><br />'+textdescription+'</body></html>')
+jkpopwin.document.close()
+jkpopwin.focus()
+}
+
+</script>
+</head>
+<html>
+<link rel = "stylesheet" href = "design.css">
+<div id = "logo">
+    <h1> Design </h1>
+</div>
+    
+    <hr color = "#e3cd5d">
+    <hr color = "#e3cd5d">
+    
+<div id = "left_column">
+    <ul id = "nav_container">
+        <li> <a href = "383.html"> Home </a> </li>
+        <hr>
+        <li> <a href = "about_us.html"> About Us </a> </li>
+        <hr>
+        <li> <a href = "Whats_New.html"> What's New </a> </li>
+        <hr>
+        <li> <a href = "Browse.html"> Browse </a> </li>
+        <hr>
+        <li> <a href = "Design.html"> Design </a> </li>
+        <hr>
+        <li> <a href = "Groups.html"> Groups </a> </li>
+        <hr>
+        <li> <a href = "Gift_Ideas.html"> Gift Ideas </a> </li>
+        <hr>
+        <li> <a href = "Subscribe.html"> Subscribe </a> </li>
+        <hr>
+        <li> <a href = "My_Account.html"> My Account </a> </li>
+        <hr>
+        <li> <a href = "Contact_Us.html"> Contact Us </a> </li>
+  </ul>
+</div>
+<!-- 
+var shapeNum = 0;
+var shape = function() {
+    shapeNum = shapeNum + 1;
+    console.log(shapeNum);
+}
+ -->
+
+<div class = "interface">
+<body onload="init()">
+
+<ul id="tabs">
+  <li><a href="#tileShape" >Tile Shape</a></li>
+  <li><a href="#tileColor" >Tile Color</a></li>
+  <li><a href="#chainColor" >Chain Color</a></li>
+  <li><a href="#pattern">Necklace Pattern</a></li>
+</ul> 
+<div class="tabContent" id="tileShape">
+  <h2>Tile Shape</h2>
+      <hr color = "#b9db8e ">
+          <hr color = "#b9db8e ">
+
+
+  <div>
+    <table style="width:100%">
+    <tr>
+        <td><input type="checkbox" onclick="shape1();"><img src = "teardrop.png" height= "90" width = "70"></input></td>
+        <td><input type="checkbox" onclick="shape2();"><img src = "circle.jpg" height= "80" width = "80"></input></td>
+        <td><input type="checkbox" onclick="shape3();"><img src = "triangle.png" height= "90" width = "80"></input></td>
+    </tr>
+    </table>
+    <hr color = "#b9db8e ">
+          <hr color = "#b9db8e ">
+          
+  </div>
+</div>
+<div class="tabContent" id="tileColor">
+  <h2>Tile Color</h2>
+      <hr color = "#b9db8e">
+          <hr color = "#b9db8e">
+
+
+  <div>
+    <table style="width:100%">
+    <tr>
+        <td><input type="checkbox" onclick="teal();"><img src = "teal.jpg" height= "80" width = "80"></input></td>
+        <td><input type="checkbox" onclick="purple();"><img src = "purple.jpg" height= "80" width = "80"></input></td>
+        <td><input type="checkbox" onclick="salmon();"><img src = "salmon.png" height= "80" width = "80"></input></td>
+        <td><input type="checkbox" onclick="mint();"><img src = "mint.jpg" height= "80" width = "80"></input></td>
+        <td><input type="checkbox" onclick="blue();"><img src = "blue.png" height= "80" width = "80"></input></td>
+       
+    </tr>
+          
+    </table>
+    <hr color = "#b9db8e ">
+          <hr color = "#b9db8e ">
+        
+  </div>
+</div>
+
+<div class="tabContent" id="chainColor">
+  <h2>Chain Color</h2>
+      <hr color = "#b9db8e">
+          <hr color = "#b9db8e">
+
+
+  <div>
+    <table style="width:100%">
+     <tr>
+        <td><input type="checkbox" onclick="silver();"><img src = "silver.jpg" height= "80" width = "240"></input></td>
+        <td><input type="checkbox" onclick="gold();"><img src = "gold.jpg" height= "80" width = "240"></input></td>
+
+    </tr>
+    </table>
+        <hr color = "#b9db8e ">
+          <hr color = "#b9db8e ">
+  </div>
+</div>
+
+<div class="tabContent" id="pattern">
+  <h2>Necklace Pattern</h2>
+      <hr color = "#b9db8e">
+          <hr color = "#b9db8e">
+
+
+  <div>
+    <table style="width:100%">
+    <tr>
+        <td><input type="checkbox" onclick="many();">Many Stones</input></td>
+        <td><input type="checkbox" onclick="one();">Single Stone</input></td>	
+    </tr>
+    </table>
+    <hr color = "#b9db8e ">
+          <hr color = "#b9db8e ">
+
+  </div>
+</div>
+<div id = "button">
+    <a href="#" class="myButton" onclick="overallResult();">Make your Necklace!</a>
+   <!--  <button onclick="overallResult();">Get Necklace!</button> -->
+
+</div>
+</div>
+</div>
+<script>
+
+var shapeNum1 = 0;
+var shapeNum2 = 0;
+var shapeNum3 = 0;
+
+var tealNum = 0;
+var purpleNum = 0;
+var salmonNum = 0;
+var mintNum = 0;
+var blueNum = 0;
+
+var silverNum = 0;
+var goldNum = 0;
+
+var oneNum = 0;
+var multipleNum = 0;
+
+
+var shape1 = function() {
+    shapeNum1 = shapeNum1 + 1;
+    console.log(shapeNum1);
+}
+var shape2 = function() {
+    shapeNum2 = shapeNum2 + 1;
+    console.log(shapeNum2);
+}
+var shape3 = function() {
+    shapeNum3 = shapeNum3 + 1;
+    console.log(shapeNum3);
+}
+
+var teal = function() {
+    tealNum = tealNum + 1;
+    console.log(tealNum);
+}
+var purple = function() {
+    purpleNum = purpleNum + 1;
+    console.log(purpleNum);
+}
+var salmon = function() {
+    salmonNum = salmonNum + 1;
+    console.log(salmonNum);
+}
+var mint = function() {
+    mintNum = mintNum + 1;
+    console.log(mintNum);
+}
+var blue = function() {
+    blueNum = blueNum + 1;
+    console.log(blueNum);
+}
+
+var silver = function() {
+    silverNum = silverNum + 1;
+    console.log(silverNum);
+}
+var gold = function() {
+    goldNum = goldNum + 1;
+    console.log(goldNum);
+}
+
+var many = function() {
+    multipleNum = multipleNum + 1;
+    console.log(multipleNum);
+}
+
+var one = function() {
+    oneNum = oneNum + 1;
+    console.log(oneNum);
+}
+
+
+var overallResult = function() {
+
+    var shape = shapeResult();
+    var color = colorResult();
+    var chain = chainResult();
+    var pattern = patternResult();
+    
+    if(shape == shapeNum1 && color == tealNum && chain == silverNum && pattern == oneNum) {
+        console.log("We did it!");
+        jkpopimage("TearTealSilOne.png", 350, 350, '');
+
+    }
+    if(shape == shapeNum1 && color == purpleNum && chain == silverNum && pattern == oneNum) {
+            jkpopimage('TearPurpSilOne.jpg', 350, 350, '');
+    }
+    if(shape == shapeNum1 && color == salmonNum && chain == silverNum && pattern == oneNum) {
+                jkpopimage('TearSalSilOne.jpg', 350, 350, '');
+    }
+    if(shape == shapeNum1 && color == mintNum && chain == silverNum && pattern == oneNum) {
+                jkpopimage('TearMintSilOne.jpeg', 350, 350, '');
+    }
+    if(shape == shapeNum1 && color == blueNum && chain == silverNum && pattern == oneNum) {
+                jkpopimage('TearBlueSilOne.jpg', 350, 350, '');
+
+    }
+    
+    if(shape == shapeNum1 && color == tealNum && chain == silverNum && pattern == multipleNum) {
+                jkpopimage('TearTealSilMul.jpg', 350, 350, '');
+
+    }
+    if(shape == shapeNum1 && color == purpleNum && chain == silverNum && pattern == multipleNum) {
+                jkpopimage('TearPurpSilMul.jpg', 350, 350, '');
+
+    }
+    if(shape == shapeNum1 && color == salmonNum && chain == silverNum && pattern == multipleNum) {
+                jkpopimage("TearSalSilMul.jpg", 350, 350, '');
+
+    }
+    if(shape == shapeNum1 && color == mintNum && chain == silverNum && pattern == multipleNum) {
+                jkpopimage('TearMintSilMul.jpg', 350, 350, '');
+
+    }
+    if(shape == shapeNum1 && color == blueNum && chain == silverNum && pattern == multipleNum) {
+                jkpopimage('TearBlueSilMul.jpg', 350, 350, '');
+
+    }
+    
+    if(shape == shapeNum1 && color == tealNum && chain == goldNum && pattern == oneNum) {
+                jkpopimage('TearTealGolOne.png', 350, 350, '');
+
+    }
+    if(shape == shapeNum1 && color == purpleNum && chain == goldNum && pattern == oneNum) {
+                jkpopimage('TearPurpGolOne.jpg', 350, 350, '');
+
+    }
+    if(shape == shapeNum1 && color == salmonNum && chain == goldNum && pattern == oneNum) {
+                jkpopimage('TearSalGolOne.jpg', 350, 350, '');
+
+    }
+    if(shape == shapeNum1 && color == mintNum && chain == goldNum && pattern == oneNum) {
+                jkpopimage('TearMintGolOne.jpg', 350, 350, '');
+
+    }
+    if(shape == shapeNum1 && color == blueNum && chain == goldNum && pattern == oneNum) {
+                jkpopimage('TearBlueGolOne.jpeg', 350, 350, '');
+
+    }
+    
+        
+    if(shape == shapeNum1 && color == tealNum && chain == goldNum && pattern == multipleNum) {
+                jkpopimage('TearTealGolMul.jpg', 350, 350, '');
+    }
+    if(shape == shapeNum1 && color == purpleNum && chain == goldNum && pattern == multipleNum) {
+                jkpopimage('TearPurpGolMul.jpg', 350, 350, '');
+    }
+    if(shape == shapeNum1 && color == salmonNum && chain == goldNum && pattern == multipleNum) {
+                jkpopimage('TearSalGolMul.jpg', 350, 350, '');
+    }
+    if(shape == shapeNum1 && color == mintNum && chain == goldNum && pattern == multipleNum) {
+                jkpopimage('TearMintGolMul.jpg', 350, 350, '');
+    }
+    if(shape == shapeNum1 && color == blueNum && chain == goldNum && pattern == multipleNum) {
+                jkpopimage('TearBlueGolMul.jpg', 350, 350, '');
+    }
+    
+    if(shape == shapeNum2 && color == tealNum && chain == silverNum && pattern == oneNum) {
+                jkpopimage('CirTealSilOne.jpg', 350, 350, '');
+    
+    }
+    if(shape == shapeNum2 && color == purpleNum && chain == silverNum && pattern == oneNum) {
+                jkpopimage('CirPurpSilOne.jpg', 350, 350, '');
+    }
+    if(shape == shapeNum2 && color == salmonNum && chain == silverNum && pattern == oneNum) {
+                jkpopimage('CirSalSilOne.jpg', 350, 350, '');
+    }
+    if(shape == shapeNum2 && color == mintNum && chain == silverNum && pattern == oneNum) {
+                jkpopimage('CirMintSilOne.jpg', 350, 350, '');
+    }
+    if(shape == shapeNum2 && color == blueNum && chain == silverNum && pattern == oneNum) {
+                jkpopimage('CirBlueSilOne.jpeg', 350, 350, '');
+    }
+    
+    if(shape == shapeNum2 && color == tealNum && chain == silverNum && pattern == multipleNum) {
+                jkpopimage('CirTealSilMul.jpg', 350, 350, '');
+    }
+    if(shape == shapeNum2 && color == purpleNum && chain == silverNum && pattern == multipleNum) {
+                jkpopimage('CirPurpSilMul.jpg', 350, 350, '');
+    }
+    if(shape == shapeNum2 && color == salmonNum && chain == silverNum && pattern == multipleNum) {
+                jkpopimage('CirSalSilMul.jpg', 350, 350, '');
+    }
+    if(shape == shapeNum2 && color == mintNum && chain == silverNum && pattern == multipleNum) {
+                jkpopimage('CirMintSilMul.jpg', 350, 350, '');
+    }
+    if(shape == shapeNum2 && color == blueNum && chain == silverNum && pattern == multipleNum) {
+                jkpopimage('CirBlueSilMul.jpg', 350, 350, '');
+    }
+    
+    if(shape == shapeNum2 && color == tealNum && chain == goldNum && pattern == oneNum) {
+                jkpopimage('CirTealGolOne.jpeg', 350, 350, '');
+    }
+    if(shape == shapeNum2 && color == purpleNum && chain == goldNum && pattern == oneNum) {
+                jkpopimage('CirPurpGolOne.jpg', 350, 350, '');
+    }
+    if(shape == shapeNum2 && color == salmonNum && chain == goldNum && pattern == oneNum) {
+                jkpopimage('CirSalGolOne.jpeg', 350, 350, '');
+    }
+    if(shape == shapeNum2 && color == mintNum && chain == goldNum && pattern == oneNum) {
+                jkpopimage('CirMintGolOne.jpg', 350, 350, '');
+    }
+    if(shape == shapeNum2 && color == blueNum && chain == goldNum && pattern == oneNum) {
+                jkpopimage('CirBlueGolOne.jpg', 350, 350, '');
+    }
+    
+        
+    if(shape == shapeNum2 && color == tealNum && chain == goldNum && pattern == multipleNum) {
+                jkpopimage('CirTealGolMul.jpg', 350, 350, '');
+    }
+    if(shape == shapeNum2 && color == purpleNum && chain == goldNum && pattern == multipleNum) {
+                jkpopimage('CirPurpGolMul.jpg', 350, 350, '');
+    }
+    if(shape == shapeNum2 && color == salmonNum && chain == goldNum && pattern == multipleNum) {
+                jkpopimage('CirSalGolMul.jpg', 350, 350, '');
+    }
+    if(shape == shapeNum2 && color == mintNum && chain == goldNum && pattern == multipleNum) {
+                jkpopimage('CirMintGolMul.jpg', 350, 350, '');
+    }
+    if(shape == shapeNum2 && color == blueNum && chain == goldNum && pattern == multipleNum) {
+                jkpopimage('CirBlueGolMul.jpg', 350, 350, '');
+    }
+    
+    if(shape == shapeNum3 && color == tealNum && chain == silverNum && pattern == oneNum) {
+                jkpopimage('TriTealSilOne.jpg', 350, 350, '');
+    }
+    if(shape == shapeNum3 && color == purpleNum && chain == silverNum && pattern == oneNum) {
+                jkpopimage('TriPurpSilOne.jpg', 350, 350, '');
+    }
+    if(shape == shapeNum3 && color == salmonNum && chain == silverNum && pattern == oneNum) {
+                jkpopimage('TriSalSilOne.jpg', 350, 350, '');
+    }
+    if(shape == shapeNum3 && color == mintNum && chain == silverNum && pattern == oneNum) {
+                jkpopimage('TriMintSilOne.jpeg', 350, 350, '');
+    }
+    if(shape == shapeNum3 && color == blueNum && chain == silverNum && pattern == oneNum) {
+                jkpopimage('TriBlueSilOne.jpeg', 350, 350, '');
+    }
+    
+    if(shape == shapeNum3 && color == tealNum && chain == silverNum && pattern == multipleNum) {
+                jkpopimage('TriTealSilMul.jpg', 350, 350, '');
+    }
+    if(shape == shapeNum3 && color == purpleNum && chain == silverNum && pattern == multipleNum) {
+                jkpopimage('TriPurpSilMul.jpg', 350, 350, '');
+    }
+    if(shape == shapeNum3 && color == salmonNum && chain == silverNum && pattern == multipleNum) {
+                jkpopimage('TriSalSilMul.jpg', 350, 350, '');
+    }
+    if(shape == shapeNum3 && color == mintNum && chain == silverNum && pattern == multipleNum) {
+                jkpopimage('TriMintSilMul.jpg', 350, 350, '');
+    }
+    if(shape == shapeNum3 && color == blueNum && chain == silverNum && pattern == multipleNum) {
+                jkpopimage('TriBlueSilMul.jpg', 350, 350, '');
+    }
+    
+    if(shape == shapeNum3 && color == tealNum && chain == goldNum && pattern == oneNum) {
+                jkpopimage('TriTealGolOne.jpg', 350, 350, '');
+    }
+    if(shape == shapeNum3 && color == purpleNum && chain == goldNum && pattern == oneNum) {
+                jkpopimage('TriPurpGolOne.jpg', 350, 350, '');
+    }
+    if(shape == shapeNum3 && color == salmonNum && chain == goldNum && pattern == oneNum) {
+                jkpopimage('TriSalGolOne.jpg', 350, 350, '');
+    }
+    if(shape == shapeNum3 && color == mintNum && chain == goldNum && pattern == oneNum) {
+                jkpopimage('TriMintGolOne.jpg', 350, 350, '');
+    }
+    if(shape == shapeNum3 && color == blueNum && chain == goldNum && pattern == oneNum) {
+                jkpopimage('TriBlueGolOne.jpg', 350, 350, '');
+
+    }
+    
+        
+    if(shape == shapeNum3 && color == tealNum && chain == goldNum && pattern == multipleNum) {
+                jkpopimage('TriTealGolMul.jpg', 350, 350, '');
+    }
+    if(shape == shapeNum3 && color == purpleNum && chain == goldNum && pattern == multipleNum) {
+                jkpopimage('TriTealGolMul.jpg', 350, 350, '');
+    }
+    if(shape == shapeNum3 && color == salmonNum && chain == goldNum && pattern == multipleNum) {
+                jkpopimage('TriTealGolMul.jpg', 350, 350, '');
+    }
+    if(shape == shapeNum3 && color == mintNum && chain == goldNum && pattern == multipleNum) {
+                jkpopimage('TriTealGolMul.jpg', 350, 350, '');
+    }
+    if(shape == shapeNum3 && color == blueNum && chain == goldNum && pattern == multipleNum) {
+                jkpopimage('TriTealGolMul.jpg', 350, 350, '');
+    }
+}
+
+var shapeResult = function(){
+    if(shapeNum1%2 == 0 && shapeNum2%2 == 0 && shapeNum3%2 == 0) {
+        confirm("You have not selected any shapes!");
+    }
+    else if(shapeNum1%2 == 1 && shapeNum2%2 == 0 && shapeNum3%2 == 0) {
+        console.log("hi");
+        return shapeNum1;
+    }
+    else if(shapeNum2%2 == 1 && shapeNum1%2 == 0 && shapeNum3%2 == 0) {
+        console.log("hi2");
+        return shapeNum2;
+    }
+    else if(shapeNum3%2 == 1 && shapeNum1%2 == 0 && shapeNum2%2 == 0) {
+        console.log("hi3");
+        return shapeNum3;
+    }
+    else {
+        confirm("You have selected too many shapes!");
+    }
+}
+var colorResult = function() {
+    if(tealNum%2 == 0 && purpleNum%2 == 0 && salmonNum%2 == 0 && mintNum%2 == 0 && blueNum%2 == 0) {
+        confirm("You have not selected any colors!");
+    }
+    if(tealNum%2 == 1 && purpleNum%2 == 0 && salmonNum%2 == 0 && mintNum%2 == 0 && blueNum%2 == 0) {
+        console.log("hii");
+        return tealNum;
+    }
+    else if(purpleNum%2 == 1 && tealNum%2 == 0 && salmonNum%2 == 0 && mintNum%2 == 0 && blueNum%2 == 0) {
+        console.log("hii1");
+        return purpleNum;
+
+    }
+    else if(salmonNum%2 == 1 && purpleNum%2 == 0 && tealNum%2 == 0 && mintNum%2 == 0 && blueNum%2 == 0) {
+        console.log("hii2");
+        return salmonNum;
+
+    }
+    else if(mintNum%2 == 1 && purpleNum%2 == 0 && salmonNum%2 == 0 && tealNum%2 == 0 && blueNum%2 == 0) {
+//         console.log("hii3");
+        return mintNum;
+
+    }
+    else if(blueNum%2 == 1 && purpleNum%2 == 0 && salmonNum%2 == 0 && mintNum%2 == 0 && tealNum%2 == 0) {
+//         console.log("hii4");
+        return blueNum;
+
+    }
+    else {
+        confirm("You have selected too many colors!");
+    }    
+}
+var chainResult = function() {
+    if(silverNum%2 == 0 && goldNum%2 == 0) {
+        confirm("You have not selected any chain colors!");
+    }
+    else if(silverNum%2 == 1 && goldNum%2 == 0) {
+//         console.log("hiii1");
+        return silverNum;
+
+    }
+    else if(goldNum%2 == 1 && silverNum%2 == 0) {
+//         console.log("hiii2");
+        return goldNum;
+    }
+    else {
+        confirm("You have selected too many chain colors!");
+    }
+} 
+var patternResult = function() {
+    if(oneNum%2 == 0 && multipleNum%2 == 0) {
+        confirm("You have not selected any patterns!");
+    }
+    else if(oneNum%2 == 1 && multipleNum%2 == 0) {
+//         console.log("hiiii1");
+        return oneNum;  
+    }
+    else if(oneNum%2 == 0 && multipleNum%2 == 1) {
+//         console.log("hiiii2");
+        return multipleNum;
+    }
+    else {
+        confirm("You have selected too many patterns!");
+    }
+}
+
+var tabLinks = new Array();
+var contentDivs = new Array();
+
+ 
+  function init() {
+
+      // Grab the tab links and content divs from the page
+      var tabListItems = document.getElementById('tabs').childNodes;
+      for ( var i = 0; i < tabListItems.length; i++ ) {
+        if ( tabListItems[i].nodeName == "LI" ) {
+          var tabLink = getFirstChildWithTagName( tabListItems[i], 'A' );
+          var id = getHash( tabLink.getAttribute('href') );
+          tabLinks[id] = tabLink;
+          contentDivs[id] = document.getElementById( id );
+        }
+      }
+
+      // Assign onclick events to the tab links, and
+      // highlight the first tab
+      var i = 0;
+
+      for ( var id in tabLinks ) {
+        tabLinks[id].onclick = showTab;
+        tabLinks[id].onfocus = function() { this.blur() };
+        if ( i == 0 ) tabLinks[id].className = 'selected';
+        i++;
+      }
+
+      // Hide all content divs except the first
+      var i = 0;
+
+      for ( var id in contentDivs ) {
+        if ( i != 0 ) contentDivs[id].className = 'tabContent hide';
+        i++;
+      }
+    }
+      
+
+function showTab() {
+      var selectedId = getHash( this.getAttribute('href') );
+
+      // Highlight the selected tab, and dim all others.
+      // Also show the selected content div, and hide all others.
+      for ( var id in contentDivs ) {
+        if ( id == selectedId ) {
+          tabLinks[id].className = 'selected';
+          contentDivs[id].className = 'tabContent';
+        } else {
+          tabLinks[id].className = '';
+          contentDivs[id].className = 'tabContent hide';
+        }
+      }
+
+      // Stop the browser following the link
+      return false;
+    }
+    
+function getFirstChildWithTagName( element, tagName ) {
+      for ( var i = 0; i < element.childNodes.length; i++ ) {
+        if ( element.childNodes[i].nodeName == tagName ) return element.childNodes[i];
+      }
+    }
+    
+function getHash( url ) {
+      var hashPos = url.lastIndexOf ( '#' );
+      return url.substring( hashPos + 1 );
+    }
+
+
+    
+    
+</script>
+<div id = "twitter">
+<a class="twitter-timeline" href="https://twitter.com/bloom_unique" data-widget-id="719358149812232192">Tweets by @bloom_unique</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
+</html>
